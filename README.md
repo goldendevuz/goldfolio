@@ -222,7 +222,7 @@ updatedDate: 2024-07-02 # optional
 heroImage: ../../assets/images/your-image.jpg # optional
 tags: [astro, ui] # optional, many-to-many labels
 category: Growth # optional, 1 broad bucket per post recommended
-author: Site Author # optional; defaults to site author
+author: Yunusov Abdulmajid # optional; defaults to Yunusov Abdulmajid
 ---
 ```
 
@@ -362,7 +362,7 @@ jobs:
 Troubleshooting
 - CSS/assets 404 on project pages → `base` is missing or wrong. Set `base: '/<repo>/'` and rebuild.
 - Wrong canonical URLs/RSS → `site` incorrect. Use your real Pages URL (or your custom domain if you set one).
-- Custom domain (CNAME) → Set `site: 'https://example.com'` and keep `base: '/'`.
+- Custom domain (CNAME) → Set `site: 'https://gold.mohir.cloud'` and keep `base: '/'`.
 
 ## ⚙️ Configuration (do this first)
 
@@ -425,5 +425,5 @@ If you deploy to Netlify, use:
 
 MIT — you’re free to use, modify, and redistribute. See `LICENSE` for details.
 
-Check my site live at 'https://guihubie.com'
+Check my site live at 'https://gold.mohir.cloud'
 
