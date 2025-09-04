@@ -1,27 +1,74 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 import GlowLineSeparator from '@/components/ui/separator/GlowLineSeparator.astro';
+import { calculateReadingTimeFromMarkdown } from '../lib/reading';
+
 const pageTitle = 'About Me';
-const pageDescription = 'Learn more about my background and approach to software engineering.';
+const pageDescription = 'Learn more about my background and approach to backend development.';
+
+// 👇 Extract page body as text for reading time calculation
+const aboutBody = `
+Hey! I'm Yunusov Abdulmajid, a backend developer based in Uzbekistan. 
+I focus on building reliable APIs, Telegram bots, and deploying applications to live servers. 
+Many of my projects are available on GitHub and deployed with custom domains for real-world testing.
+
+My technical background includes Python, Django, Django REST Framework, FastAPI, and Aiogram. 
+I work with databases like PostgreSQL and SQLite, and handle deployments using 
+Docker, Nginx, Railway, Contabo, and Vercel. I also integrate services such as Google Sheets 
+and Forms for automation workflows.
+
+Some of my key projects include Telegram automation bots, an API monitoring dashboard, 
+and custom APIs for audiobook and education platforms. These projects combine 
+REST API design, background tasks, automation, and DevOps practices.
+
+I studied backend development at PDP Academy (offline, completed 2024) and continue to learn 
+through self-study on platforms like Mohirdev, Udemy, Coursera, and 42. 
+Currently, I’m exploring the foundations of AI and Machine Learning.
+
+Beyond coding, I enjoy technical writing—I’ve published articles about Django and DRF 
+on Medium — and I run the GoldenDevs community to share knowledge and collaborate with other developers.
+`;
+
+const readingTimeMin = calculateReadingTimeFromMarkdown(aboutBody);
 ---
 
-<Layout title={pageTitle} description={pageDescription} pubDate={new Date()} showHeader={false}>
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  pubDate={new Date()}
+  readingTimeMin={readingTimeMin}
+  showHeader={false}
+>
   <p>
-    Hey! I'm a senior software engineer who loves designing reliable systems and shipping products that feel great to use.
+    Hey! I'm <strong>Yunusov Abdulmajid</strong>, a backend developer based in Uzbekistan. 
+    I focus on building reliable APIs, Telegram bots, and deploying applications to live servers. 
+    Many of my projects are available on GitHub and deployed with custom domains for real-world testing.
   </p>
+
   <p>
-    I work across the stack with TypeScript, Node.js, React/Next.js, and PostgreSQL. I care deeply about readable code,
-    strong tests, and observability. My approach: ship small, iterate quickly, measure outcomes.
+    My technical background includes <strong>Python, Django, Django REST Framework, FastAPI, and Aiogram</strong>. 
+    I work with databases like <strong>PostgreSQL</strong> and <strong>SQLite</strong>, and handle deployments using 
+    <strong>Docker, Nginx, Railway, Contabo, and Vercel</strong>. I also integrate services such as Google Sheets 
+    and Forms for automation workflows.
   </p>
+
   <p>
-    Recent highlights include leading a migration from a monolith to well‑scoped services, improving p95 latency,
-    and introducing CI/CD with preview environments and quality gates.
+    Some of my key projects include <em>Telegram automation bots</em>, an <em>API monitoring dashboard</em>, 
+    and <em>custom APIs for audiobook and education platforms</em>. These projects combine 
+    REST API design, background tasks, automation, and DevOps practices.
   </p>
+
   <p>
-    Outside of feature work, I enjoy mentoring, documentation, and building design‑system components that make teams faster.
-    Always learning—and always happy to collaborate on meaningful problems.
+    I studied backend development at <strong>PDP Academy</strong> (offline, completed 2024) and continue to learn 
+    through <strong>self-study</strong> on platforms like Mohirdev, Udemy, Coursera, and 42. 
+    Currently, I’m exploring the foundations of AI and Machine Learning.
+  </p>
+
+  <p>
+    Beyond coding, I enjoy <strong>technical writing</strong>—I’ve published articles about Django and DRF 
+    <br> on <a href="https://goldendev.medium.com" target="_blank">Medium</a> — and I run the 
+    <strong>GoldenDevs community</strong> to share knowledge and collaborate with other developers.
   </p>
 
   <GlowLineSeparator />
-
 </Layout>
